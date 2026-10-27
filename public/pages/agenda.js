@@ -1,0 +1,7 @@
+import { subjects } from '../data.js';
+import { getState } from '../services/storage.js';
+import { heading, esc, dateLabel, badge, empty } from '../components/ui.js';
+export function render() {
+ const reservations = getState().reservations.filter(r => r.status === 'Confirmada').sort((a,b) => (a.date + a.time).localeCompare(b.date + b.time));
+ return heading('Minha agenda', 'Sua semana de aulas e seus espaços reservados.') + `<div class="stack"><section class="panel"><div class="panel-head"><h2>Grade semanal</h2>${badge('2026.2', 'gray')}</div><div class="table-scroll"><table><caption class="sr-only">Grade de aulas semanal</caption><thead><tr><th scope="col">Dia</th><th scope="col">Horário</th><th scope="col">Disciplina</th><th scope="col">Local</th></tr></thead><tbody>${subjects.map(s => `<tr><td>${s.day}</td><td>${s.start} - ${s.end}</td><td><strong>${s.name}</strong><small>${s.teacher}</small></td><td>${s.room}</td></tr>`).join('')}</tbody></table></div></section><section class="panel"><div class="panel-head"><h2>Reservas confirmadas</h2><a class="btn secondary" href="#laboratorios">Nova reserva</a></div>${reservations.length ? reservations.map(r => `<article class="list-card"><div><h3>${esc(r.room)}</h3><p>${dateLabel(r.date)} · ${esc(r.time)} · 2 horas<br>${esc(r.reason)}</p></div>${badge('Confirmada')}</article>`).join('') : empty('Sem reservas confirmadas. Seus agendamentos aparecerão aqui.')}</section></div>`;
+}

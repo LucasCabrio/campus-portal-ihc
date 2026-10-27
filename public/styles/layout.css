@@ -1,0 +1,34 @@
+.sidebar{position:fixed;inset:0 auto 0 0;width:244px;background:var(--white);border-right:1px solid var(--line);padding:31px 21px 16px;display:flex;flex-direction:column;z-index:5}
+.brand{display:flex;align-items:center;gap:11px;font-size:29px;font-weight:750;letter-spacing:-1.2px}
+.brand-icon{background:var(--ink);color:white;border-radius:12px;width:44px;height:44px;text-align:center;font-size:39px;line-height:39px;position:relative}
+.brand-icon span{color:#b9e79b;font-size:23px;position:absolute;right:6px;top:0}
+.brand small{font-size:8px;letter-spacing:2.1px;margin-top:2px;color:var(--muted)}
+.workspace{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:10px;margin-top:35px;padding:13px 10px;font-size:12px;font-weight:600}
+.workspace small{font-weight:400;font-size:10px;color:var(--muted);margin-top:4px}
+.school-icon{font-size:24px;color:var(--green)}
+.live-dot{width:6px;height:6px;background:#36835c;border-radius:100%;margin-left:auto}
+.nav-label{font-size:10px;letter-spacing:1.6px;color:var(--muted);margin:30px 12px 12px}
+.nav-item{display:flex;align-items:center;gap:12px;padding:13px 14px;margin:4px 0;border-radius:8px;color:#536763;font-size:13px;font-weight:550;min-height:46px}
+.nav-item svg{width:19px;height:19px}
+.nav-item.active{background:var(--soft);color:#185b50;font-weight:700}
+.nav-item.active:after{content:'';width:5px;height:5px;background:var(--green);border-radius:100%;margin-left:auto}
+.sidebar-bottom{margin-top:auto;padding-top:28px}
+.help-card{border-radius:11px;background:#f4f7f4;padding:17px 14px;font-size:12px}
+.help-card>span{font-weight:650}
+.help-card p{font-size:11px;color:var(--muted);line-height:1.7;margin:8px 0 12px}
+.help-card a{font-weight:650;color:var(--green)}
+.help-card a span{float:right}
+.access-link{display:flex;gap:12px;align-items:center;font-size:12px;padding:21px 10px}
+.profile{border-top:1px solid var(--line);padding-top:17px;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:650}
+.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#e8eee6;color:#355d4c}
+.profile small{font-size:10px;color:var(--muted);margin-top:4px;font-weight:400}
+.student-label{margin-left:auto;font-size:9px;background:#f2f4f3;border:1px solid var(--line);padding:4px 5px;border-radius:4px}
+.shell{margin-left:244px}
+.topbar{height:78px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:22px;padding:0 38px;font-size:12px}
+.topbar #breadcrumb{margin-right:auto;color:var(--muted)}
+#breadcrumb span{margin:0 13px;color:#a1afab}
+#search-form{display:flex;align-items:center;gap:9px;padding:6px 11px;background:var(--bg);border:1px solid var(--line);border-radius:7px}
+#search-form input{border:0;background:transparent;width:170px;font-size:11px;color:inherit;padding:5px 0}
+#search-form button{background:white;border:1px solid var(--line);color:var(--muted);border-radius:3px}
+.top-help{border:1px solid #a1afab;border-radius:50%;width:22px;height:22px;display:grid;place-items:center}
+main{padding:34px 38px;max-width:1600px;margin:auto;min-height:calc(100vh - 128px)}

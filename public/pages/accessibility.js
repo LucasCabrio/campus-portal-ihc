@@ -1,0 +1,10 @@
+import { getState, updateState } from '../services/storage.js';
+import { heading, toast, confirmAction } from '../components/ui.js';
+export function applyPreferences() { const p = getState().preferences; document.body.classList.toggle('contrast', p.contrast); document.body.classList.toggle('large', p.large); }
+export function render() { const p = getState().preferences; return heading('Acessibilidade', 'Ajuste a experiência para o seu jeito de navegar.') + `<section class="panel content-card"><h2>Preferências de leitura</h2><label class="setting"><span><strong>Contraste reforçado</strong><p>Escurece textos e reforça os limites dos componentes.</p></span><input type="checkbox" id="contrast" ${p.contrast ? 'checked' : ''}></label><label class="setting"><span><strong>Ampliar interface</strong><p>Aumenta a interface em 15%. Você também pode usar o zoom do navegador.</p></span><input type="checkbox" id="large" ${p.large ? 'checked' : ''}></label><h2>Navegação por teclado</h2><p>Tab avança entre controles; Shift + Tab retorna; Enter ativa; Escape fecha diálogos. O foco é destacado em verde.</p><h2>Seus dados de demonstração</h2><p>Você pode limpar solicitações e reservas para repetir uma apresentação. As preferências de leitura serão preservadas.</p><button class="btn secondary" id="reset-data">Limpar dados de demonstração</button><p>Estas adaptações apoiam a acessibilidade. O projeto não representa certificação de conformidade WCAG.</p></section>`; }
+export function bind(refresh) {
+ ['contrast', 'large'].forEach(key => document.getElementById(key).onchange = e => {
+  try { updateState(s => { s.preferences[key] = e.target.checked; }); applyPreferences(); toast('Preferência salva neste navegador.'); } catch (err) { e.target.checked = !e.target.checked; toast(err.message); }
+ });
+ document.querySelector('#reset-data').onclick = () => confirmAction('Limpar dados de demonstração?', 'Todas as solicitações e reservas deste navegador serão removidas. Essa ação não pode ser desfeita.', () => { updateState(s => { s.documents = []; s.reservations = []; }); refresh(); toast('Dados de demonstração removidos.'); }, 'Limpar dados');
+}

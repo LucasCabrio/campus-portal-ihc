@@ -1,0 +1,20 @@
+{
+  "executedAt": "2026-10-27T21:31:12.024Z",
+  "browser": "Chromium / headless",
+  "unitTests": 7,
+  "checks": [
+    "Emissão de documento, protocolo e download",
+    "Persistência após recarregamento",
+    "Reserva válida e bloqueio de conflito",
+    "Reserva integrada à agenda",
+    "Confirmação de cancelamento e opção Voltar",
+    "Horário liberado após cancelamento",
+    "Consulta de cinco disciplinas",
+    "Busca por serviços",
+    "Preferências de acessibilidade persistentes",
+    "Link de pular conteúdo por teclado",
+    "Sete telas em viewport móvel, sem overflow da página",
+    "Texto fornecido pelo usuário escapado",
+    "Nenhum erro JavaScript durante os cenários"
+  ]
+}

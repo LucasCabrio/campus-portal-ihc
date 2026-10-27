@@ -1,0 +1,9 @@
+{
+  "name": "campus-portal-ihc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal escolar demonstrativo para projeto final de IHC",
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "dev": "node --watch server.mjs", "test": "node --test tests/*.test.mjs" },
+  "engines": { "node": ">=20" }
+}
