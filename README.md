@@ -97,7 +97,7 @@ Com o servidor ativo na porta 4173, execute `node scripts/browser-qa.cjs`. Para 
 
 ## Documentação de IHC
 
-- Relatório explicativo em PDF: disponível localmente em `output/pdf/Campus-Relatorio-IHC.pdf`, sem versionamento no GitHub. Para gerar uma cópia, siga as instruções abaixo.
+- [Relatório explicativo em PDF](output/pdf/Campus-Relatorio-IHC.pdf)
 - [Pesquisa, personas, jornada e avaliação](docs/processo-ihc.md)
 - [Roteiro de teste](docs/roteiro-teste.md)
 - [Planilha de coleta em CSV](docs/coleta-usabilidade.csv)

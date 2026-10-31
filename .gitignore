@@ -3,4 +3,3 @@ tmp/
 .DS_Store
 *.log
 .env
-output/pdf/*.pdf
